@@ -48,6 +48,8 @@ public class WithdrawDTO implements Validator {
             if (!transactionAmount.toString().matches("(^$|[0-9]*$)")){
                 errors.rejectValue("transactionAmount", "transactionAmount.matches");
             }
+        }else {
+            errors.rejectValue("transactionAmount", "transactionAmount.null");
         }
     }
 

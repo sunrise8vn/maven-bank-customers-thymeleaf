@@ -75,7 +75,10 @@
                 <div class="form-group row">
                     <div class="mb-3 col-md-12">
                         <div class="col-sm-4">
-                            <input type="submit" class="btn btn-outline-primary" value="Transfer" />
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class="fa fa-exchange" aria-hidden="true"></i>
+                                 Transfer
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -94,7 +97,7 @@
             </th:block>
             <th:block th:if="${success}">
                 <div class="alert-success">
-                    <span th:text="${success}"></span>
+                    <h5><span th:text="${success}"></span></h5>
                 </div>
                 <span id="close">X</span>
                 <script th:inline="javascript">
@@ -114,8 +117,10 @@
             </div>
             <th:block th:if="${error}">
                 <div class="alert-danger">
-                    <h5>Please correct errors below:</h5>
-                    <span th:text="${error}"></span>
+                    <h5>Error message:</h5>
+                    <ul>
+                        <li th:text="${error}"></li>
+                    </ul>
                 </div>
             </th:block>
         </div>

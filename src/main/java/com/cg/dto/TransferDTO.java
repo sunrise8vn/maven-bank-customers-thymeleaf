@@ -58,6 +58,8 @@ public class TransferDTO implements Validator {
             if (!transferAmount.toString().matches("(^$|[0-9]*$)")){
                 errors.rejectValue("transferAmount", "transferAmount.matches");
             }
+        } else {
+            errors.rejectValue("transferAmount", "transferAmount.null");
         }
     }
 

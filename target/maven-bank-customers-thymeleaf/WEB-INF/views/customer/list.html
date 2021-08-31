@@ -26,27 +26,43 @@
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Balance</th>
-                    <th>Edit</th>
-                    <th>Deposit</th>
-                    <th>Withdraw</th>
-                    <th>Transfer</th>
-                    <th>Suspended</th>
+                    <th colspan="5">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <th:block th:each="customer : ${customers}">
                     <tr>
-                        <td th:text="${customer.getId()}"></td>
+                        <td th:text="${customer.getId()}" class="text-center"></td>
                         <td th:text="${customer.getFullName()}"></td>
                         <td th:text="${customer.getEmail()}"></td>
                         <td th:text="${customer.getPhone()}" class="text-center"></td>
                         <td th:text="${customer.getAddress()}"></td>
-                        <td th:text="${customer.getBalance()}" class="text-end dot-space"></td>
-                        <td class="text-center"><a th:href="@{/customers/edit/__${customer.getId()}__ }">Edit</a></td>
-                        <td class="text-center"><a th:href="@{/customers/deposit/__${customer.getId()}__ }">Deposit</a></td>
-                        <td class="text-center"><a th:href="@{/customers/withdraw/__${customer.getId()}__ }">Withdraw</a></td>
-                        <td class="text-center"><a th:href="@{/customers/transfer/__${customer.getId()}__ }">Transfer</a></td>
-                        <td class="text-center"><a th:href="@{/customers/suspended/__${customer.getId()}__ }">Suspended</a></td>
+                        <td th:text="${customer.getBalance()}" class="text-end num-space"></td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-secondary" title="Edit" data-toggle="tooltip" th:href="@{/customers/edit/__${customer.getId()}__ }">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-success" title="Deposit" data-toggle="tooltip" th:href="@{/customers/deposit/__${customer.getId()}__ }">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-warning" title="Withdraw" data-toggle="tooltip" th:href="@{/customers/withdraw/__${customer.getId()}__ }">
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-primary" title="Transfer" data-toggle="tooltip" th:href="@{/customers/transfer/__${customer.getId()}__ }">
+                                <i class="fa fa-exchange" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-danger" title="Suspended" data-toggle="tooltip" th:href="@{/customers/suspended/__${customer.getId()}__ }">
+                                <i class="fa fa-ban" aria-hidden="true"></i>
+                            </a>
+                        </td>
                     </tr>
                 </th:block>
             </tbody>

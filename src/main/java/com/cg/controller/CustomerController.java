@@ -181,7 +181,7 @@ public class CustomerController {
     }
 
     @PostMapping("/deposit/{id}")
-    public ModelAndView doDeposits(@PathVariable Long id, @Validated @ModelAttribute DepositDTO depositDTO, BindingResult bindingResult) {
+    public ModelAndView doDeposits(@PathVariable Long id, @ModelAttribute DepositDTO depositDTO, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/customer/deposit");
 

@@ -36,7 +36,10 @@
                     <input type="text" class="form-control" id="address" th:field="*{address}">
                 </div>
                 <div class="col-md-12">
-                    <input type="submit" id="btnUpdateCustomer" class="btn btn-outline-primary" value="Save changes">
+                    <button type="submit" id="btnUpdateCustomer" class="btn btn-outline-secondary">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                         Save changes
+                    </button>
                 </div>
             </fieldset>
         </form>
@@ -45,7 +48,7 @@
         <div id="message-alert">
             <th:block th:if="${success}">
                 <div class="alert-success">
-                    <span th:text="${success}"></span>
+                    <h5><span th:text="${success}"></span></h5>
                 </div>
                 <span id="close">X</span>
                 <script th:inline="javascript">
@@ -65,8 +68,10 @@
             </div>
             <th:block th:if="${error}">
                 <div class="alert-danger">
-                    <h5>Please correct errors below:</h5>
-                    <span th:text="${error}"></span>
+                    <h5>Error message:</h5>
+                    <ul>
+                        <li th:text="${error}"></li>
+                    </ul>
                 </div>
             </th:block>
         </div>
