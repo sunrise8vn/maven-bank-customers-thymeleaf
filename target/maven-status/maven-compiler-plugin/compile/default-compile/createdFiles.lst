@@ -20,6 +20,7 @@ com\cg\service\transfer\ITransferService.class
 com\cg\model\dto\DepositDTO.class
 com\cg\model\dto\RecipientDTO.class
 com\cg\model\dto\TransferDTO.class
+com\cg\controller\ErrorController.class
 com\cg\controller\HomeController.class
 com\cg\config\AppConfig.class
 com\cg\config\AppInit.class
