@@ -4,24 +4,17 @@ import com.cg.dto.DepositDTO;
 import com.cg.dto.RecipientDTO;
 import com.cg.dto.TransferDTO;
 import com.cg.dto.WithdrawDTO;
-import com.cg.exception.DoRegisterFailedException;
-import com.cg.exception.DoWithdrawFailedException;
 import com.cg.model.Customer;
-import com.cg.model.Deposit;
-import com.cg.model.Transfer;
 import com.cg.service.customer.ICustomerService;
 import com.cg.service.transfer.ITransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -288,8 +281,7 @@ public class CustomerController {
                 modelAndView.addObject("error", "The sender's balance is not enough to make the transfer");
             }
         }
-//        modelAndView.addObject("success", "ID " + id + " successfully transferred money to ID " + transfer.getRecipientId() + " with the amount of " + transfer.getTransactionAmount() +  " $");
-//
+
         return modelAndView;
     }
 
