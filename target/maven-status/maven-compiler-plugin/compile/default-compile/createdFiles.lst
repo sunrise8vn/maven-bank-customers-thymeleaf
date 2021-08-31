@@ -1,0 +1,14 @@
+com\cg\model\Deposit.class
+com\cg\repository\ICustomerRepository.class
+com\cg\service\IGeneralService.class
+com\cg\model\Withdraw.class
+com\cg\model\Transfer.class
+com\cg\controller\CustomerController.class
+com\cg\model\BaseEntity.class
+com\cg\controller\HomeController.class
+com\cg\dto\TransferDTO.class
+com\cg\config\AppConfig.class
+com\cg\model\Customer.class
+com\cg\service\customer\CustomerService.class
+com\cg\service\customer\ICustomerService.class
+com\cg\config\AppInit.class

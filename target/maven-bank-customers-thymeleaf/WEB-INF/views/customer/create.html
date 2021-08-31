@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create customer</title>
+    <th:block th:replace="/layout/head :: head" />
+</head>
+<body>
+    <div class="container">
+        <div class="table-title mb-4">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Create customer</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a href="/customers" class="btn btn-outline-light"><i class="fa fa-list" aria-hidden="true"></i> <span>Customer list</span></a>
+                </div>
+            </div>
+        </div>
+        <form th:object="${customer}" id="frmCreateCustomer" method="post">
+            <fieldset class="row g-3">
+                <div class="col-md-6">
+                    <label for="fullName" class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+                <div class="col-md-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" name="address">
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" id="btnCreateCustomer" class="btn btn-outline-primary" value="Create customer">
+<!--                    <input type="submit" formnovalidate class="cancel btn btn-outline-primary" value="Create customer no validate">-->
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="footer">
+        <div id="message-alert">
+            <th:block th:if="${script} == true">
+                <div class="alert-danger">
+                    <h5>Please correct errors below:</h5>
+                    <ul>
+                        <li th:each="err : ${#fields.errors('customer.*')}" th:text="${err}"></li>
+                    </ul>
+                </div>
+            </th:block>
+            <th:block th:if="${success}">
+                <div class="alert-success">
+                    <span th:text="${success}"></span>
+                </div>
+                <span id="close">X</span>
+                <script th:inline="javascript">
+                    $("#close").on("click", function () {
+                        $(".footer").css("height", 0);
+                        $("#message-alert").empty();
+                    });
+
+                    $(".alert-success").fadeTo(5000, 500).fadeOut(1000, function () {
+                        $(".footer").css("height", 0);
+                        $("#message-alert").empty();
+                    });
+                </script>
+            </th:block>
+            <div class="alert-danger hide">
+                <h5>Please correct errors below:</h5>
+            </div>
+            <th:block th:if="${error}">
+                <div class="alert-danger">
+                    <h5>Please correct errors below:</h5>
+                    <span th:text="${error}"></span>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+    <th:block th:replace="/layout/script :: script" />
+
+</body>
+</html>
