@@ -1,9 +1,9 @@
 package com.cg.controller;
 
-import com.cg.dto.DepositDTO;
-import com.cg.dto.RecipientDTO;
-import com.cg.dto.TransferDTO;
-import com.cg.dto.WithdrawDTO;
+import com.cg.model.dto.DepositDTO;
+import com.cg.model.dto.RecipientDTO;
+import com.cg.model.dto.TransferDTO;
+import com.cg.model.dto.WithdrawDTO;
 import com.cg.model.Customer;
 import com.cg.service.customer.ICustomerService;
 import com.cg.service.transfer.ITransferService;
@@ -181,7 +181,7 @@ public class CustomerController {
     }
 
     @PostMapping("/deposit/{id}")
-    public ModelAndView doDeposits(@PathVariable Long id, @ModelAttribute DepositDTO depositDTO, BindingResult bindingResult) {
+    public ModelAndView doDeposits(@PathVariable Long id, @Validated @ModelAttribute DepositDTO depositDTO, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/customer/deposit");
 

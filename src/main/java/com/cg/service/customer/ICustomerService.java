@@ -1,14 +1,13 @@
 package com.cg.service.customer;
 
-import com.cg.dto.DepositDTO;
-import com.cg.dto.RecipientDTO;
-import com.cg.dto.TransferDTO;
-import com.cg.dto.WithdrawDTO;
+import com.cg.model.dto.DepositDTO;
+import com.cg.model.dto.RecipientDTO;
+import com.cg.model.dto.TransferDTO;
+import com.cg.model.dto.WithdrawDTO;
 import com.cg.model.Customer;
 import com.cg.service.IGeneralService;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 
 public interface ICustomerService extends IGeneralService<Customer> {

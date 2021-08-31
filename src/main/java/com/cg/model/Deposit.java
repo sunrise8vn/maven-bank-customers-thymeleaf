@@ -1,13 +1,10 @@
 package com.cg.model;
 
-import com.cg.dto.DepositDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

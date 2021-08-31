@@ -1,9 +1,9 @@
 package com.cg.service.customer;
 
-import com.cg.dto.DepositDTO;
-import com.cg.dto.RecipientDTO;
-import com.cg.dto.TransferDTO;
-import com.cg.dto.WithdrawDTO;
+import com.cg.model.dto.DepositDTO;
+import com.cg.model.dto.RecipientDTO;
+import com.cg.model.dto.TransferDTO;
+import com.cg.model.dto.WithdrawDTO;
 import com.cg.model.Customer;
 import com.cg.repository.CustomerRepository;
 import com.cg.repository.DepositRepository;

@@ -1,7 +1,7 @@
 package com.cg.controller;
 
-import com.cg.dto.ITransferDTO;
-import com.cg.dto.SumFeesAmountDTO;
+import com.cg.model.dto.ITransferDTO;
+import com.cg.model.dto.SumFeesAmountDTO;
 import com.cg.service.transfer.ITransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

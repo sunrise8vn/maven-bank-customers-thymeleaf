@@ -1,11 +1,10 @@
 package com.cg.service.transfer;
 
-import com.cg.dto.ITransferDTO;
-import com.cg.dto.SumFeesAmountDTO;
-import com.cg.dto.TransferDTO;
+import com.cg.model.dto.ITransferDTO;
+import com.cg.model.dto.SumFeesAmountDTO;
+import com.cg.model.dto.TransferDTO;
 import com.cg.model.Transfer;
 import com.cg.repository.TransferRepository;
-import com.cg.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
